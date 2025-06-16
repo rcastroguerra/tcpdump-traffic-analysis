@@ -3,13 +3,11 @@
 Esta lectura explica cómo identificar el ataque de fuerza bruta usando
 tcpdump.
 
-+-----------------------------------------------------------------------+
-| 14:18:32.192571 IP **your.machine.52444 \> dns.google.domain**:       |
-| 35084+ A? **yummyrecipesforme.com**. (24)                             |
-|                                                                       |
-| 14:18:32.204388 IP **dns.google.domain** \> **your.machine.52444**:   |
-| 35084 1/0/0 A **203.0.113.22** (40)                                   |
-+-----------------------------------------------------------------------+
+| Timestamp       | Dirección de tráfico                 | Detalle DNS                                       |
+|-----------------|-----------------------------------|--------------------------------------------------|
+| 14:18:32.192571 | your.machine.52444 → dns.google.domain | 35084+ A? yummyrecipesforme.com. (24)            |
+| 14:18:32.204388 | dns.google.domain → your.machine.52444 | 35084 1/0/0 A 203.0.113.22 (40)                  |
+
 
 La primera sección del archivo de registro de tráfico DNS y HTTP muestra
 la computadora de origen (tu.máquina.52444) que usa el puerto 52444 para
