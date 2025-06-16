@@ -33,48 +33,25 @@ durante aproximadamente 2 minutos, de acuerdo con las marcas de tiempo
 entre este bloque (14:18) y la siguiente solicitud de resolución DNS
 (consulte a continuación la marca de tiempo 14:20).
 
-  --------------------------------------------------------------------------------
-  **Flags**      **Significado en     **Explicación en español**
-                 TCP**                
-  -------------- -------------------- --------------------------------------------
-  **\[S\]**      **SYN**              **Solicita iniciar una conexión**
+ | Flags     | Significado en TCP       | Explicación en español                                 |
+|-----------|-------------------------|-------------------------------------------------------|
+| `[S]`     | SYN                     | Solicita iniciar una conexión                          |
+| `[S.]`    | SYN + ACK               | Respuesta aceptando inicio de conexión                 |
+| `[.]`     | ACK                     | Reconocimiento (acknowledgment)                        |
+| `[P.]`    | PSH + ACK               | Empuje de datos y reconocimiento                       |
+| `[F]`     | FIN                     | Solicita terminar la conexión                           |
+| `[F.]`    | FIN + ACK               | Finaliza conexión con reconocimiento                    |
+| `[R]`     | RST                     | Restablece una conexión (por error o rechazo)          |
+| `[R.]`    | RST + ACK               | Restablece con reconocimiento (menos común)            |
+| `[FP.]`   | FIN + PSH + ACK         | Finaliza la conexión empujando los últimos datos       |
+| `[SFP.]`  | SYN + FIN + PSH + ACK   | Raro; múltiples flags combinados                        |
+| `[P]`     | PSH                     | Empuje de datos sin ACK (inusual/anómalo)              |
+| `[F,P.]`  | FIN + PSH + ACK         | Finaliza y empuja datos                                 |
+| `[S,R]`   | SYN + RST               | Conflicto lógico (no debería ocurrir)                  |
+| `[U.]`    | URG + ACK               | Dato urgente con reconocimiento                         |
+| `[E.]`    | ECE + ACK               | Notificación de congestión con ACK                      |
+| `[W.]`    | CWR + ACK               | Reducción de ventana por congestión + ACK              |
 
-  **\[S.\]**     **SYN + ACK**        **Respuesta aceptando inicio de conexión**
-
-  **\[.\]**      **ACK**              **Reconocimiento (acknowledgment)**
-
-  **\[P.\]**     **PSH + ACK**        **Empuje de datos y reconocimiento**
-
-  **\[F\]**      **FIN**              **Solicita terminar la conexión**
-
-  **\[F.\]**     **FIN + ACK**        **Finaliza conexión con reconocimiento**
-
-  **\[R\]**      **RST**              **Restablece una conexión (por error o
-                                      rechazo)**
-
-  **\[R.\]**     **RST + ACK**        **Restablece con reconocimiento (menos
-                                      común)**
-
-  **\[FP.\]**    **FIN + PSH + ACK**  **Finaliza la conexión empujando los últimos
-                                      datos**
-
-  **\[SFP.\]**   **SYN + FIN + PSH +  **Raro; múltiples flags combinados**
-                 ACK**                
-
-  **\[P\]**      **PSH**              **Empuje de datos sin ACK
-                                      (inusual/anómalo)**
-
-  **\[F,P.\]**   **FIN + PSH + ACK**  **Finaliza y empuja datos**
-
-  **\[S,R\]**    **SYN + RST**        **Conflicto lógico (no debería ocurrir)**
-
-  **\[U.\]**     **URG + ACK**        **Dato urgente con reconocimiento**
-
-  **\[E.\]**     **ECE + ACK**        **Notificación de congestión con ACK**
-
-  **\[W.\]**     **CWR + ACK**        **Reducción de ventana por congestión +
-                                      ACK**
-  --------------------------------------------------------------------------------
 
   -----------------------------------------------------------------------
   14:18:36.786589 IP your.machine.36086 \>
