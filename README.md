@@ -16,17 +16,11 @@ enviar una solicitud de resolución de DNS al servidor DNS
 continuación, la respuesta vuelve del servidor DNS al equipo de origen
 con la dirección IP de la URL de destino (203.0.113.22).
 
-+-----------------------------------------------------------------------+
-| 14:18:36.786501 IP **your.machine.36086** \>                          |
-| **yummyrecipesforme.com.http**: **Flags \[S\]**, seq 2873951608, win  |
-| 65495, options \[mss 65495,sackOK,TS val 3302576859 ecr 0,nop,wscale  |
-| 7\], length 0                                                         |
-|                                                                       |
-| 14:18:36.786517 IP yummyrecipesforme.com.http \> your.machine.36086:  |
-| **Flags** **\[S.\]**, seq 3984334959, ack 2873951609, win 65483,      |
-| options \[mss 65495,sackOK,TS val 3302576859 ecr                      |
-| 3302576859,nop,wscale 7\], length 0                                   |
-+-----------------------------------------------------------------------+
+```plaintext
+14:18:36.786501 IP your.machine.36086 > yummyrecipesforme.com.http: Flags [S], seq 2873951608, win 65495, options [mss 65495,sackOK,TS val 3302576859 ecr 0,nop,wscale 7], length 0
+
+14:18:36.786517 IP yummyrecipesforme.com.http > your.machine.36086: Flags [S.], seq 3984334959, ack 2873951609, win 65483, options [mss 65495,sackOK,TS val 3302576859 ecr 3302576859,nop,wscale 7], length 0
+```
 
 En la siguiente sección se muestra el equipo de origen que envía una
 solicitud de conexión (Flags \[S\]) desde el equipo de origen
